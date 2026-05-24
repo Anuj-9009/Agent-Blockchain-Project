@@ -1,40 +1,44 @@
-<svg width="800" height="160" viewBox="0 0 800 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: #0f0c1b; border-radius: 24px; border: 1px solid rgba(139, 92, 246, 0.2);">
-    <style>
-      .text-title {
-        font-family: 'Sora', 'Inter', system-ui, -apple-system, sans-serif;
-        font-weight: 800;
-        font-size: 38px;
-        fill: url(#blockGradient);
-        filter: drop-shadow(0px 10px 15px rgba(139, 92, 246, 0.35));
-      }
-      .text-subtitle {
-        font-family: 'Inter', system-ui, sans-serif;
-        font-weight: 500;
-        font-size: 13px;
-        fill: #a78bfa;
-        letter-spacing: 0.22em;
-      }
-      .glow-agent {
-        animation: floatAgent 7s ease-in-out infinite alternate;
-      }
-      @keyframes floatAgent {
-        0% { transform: translate(0px, 0px) scale(1); filter: blur(28px); opacity: 0.4; }
-        100% { transform: translate(25px, -15px) scale(1.1); filter: blur(38px); opacity: 0.6; }
-      }
-    </style>
-    <!-- Background Neon Blobs -->
-    <circle class="glow-agent" cx="200" cy="80" r="60" fill="#7c3aed" />
-    <circle class="glow-agent" cx="600" cy="80" r="50" fill="#f59e0b" style="animation-delay: -3.5s;" />
-    
-    <!-- Title Text -->
-    <text x="50%" y="80" dominant-baseline="middle" text-anchor="middle" class="text-title">AGENT-DRIVEN BLOCKCHAIN VOTING</text>
-    <text x="50%" y="120" dominant-baseline="middle" text-anchor="middle" class="text-subtitle">CRYPTOGRAPHIC INTEGRITY & AUTONOMOUS AI AGENTS</text>
-    
-    <defs>
-      <linearGradient id="blockGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#8b5cf6" />
-        <stop offset="50%" stop-color="#f59e0b" />
-        <stop offset="100%" stop-color="#8b5cf6" />
-      </linearGradient>
-    </defs>
-  </svg>
+<svg width="800" height="160" viewBox="0 0 800 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text-title {
+      font-family: 'Sora', 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 800;
+      font-size: 38px;
+      fill: url(#headerGrad);
+      filter: drop-shadow(0px 8px 16px rgba(139, 92, 246, 0.3));
+      letter-spacing: 0.08em;
+    }
+    .text-subtitle {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #ffffff;
+      opacity: 0.65;
+      letter-spacing: 0.16em;
+    }
+    .glow-blob {
+      animation: floatBlob 7s ease-in-out infinite alternate;
+    }
+    @keyframes floatBlob {
+      0% { transform: translate(0px, 0px) scale(1); filter: blur(35px); opacity: 0.35; }
+      100% { transform: translate(30px, -15px) scale(1.18); filter: blur(45px); opacity: 0.6; }
+    }
+  </style>
+  <rect width="800" height="160" fill="#0b0714" rx="16" />
+  
+  <!-- Background Blur Decorative Blobs -->
+  <circle class="glow-blob" cx="190" cy="80" r="75" fill="#06b6d4" />
+  <circle class="glow-blob" cx="610" cy="90" r="65" fill="#8b5cf6" style="animation-delay: -3.5s;" />
+  
+  <!-- Title Text -->
+  <text x="50%" y="78" dominant-baseline="middle" text-anchor="middle" class="text-title">B L O C K C H A I N  V O T I N G  S Y S T E M</text>
+  <text x="50%" y="122" dominant-baseline="middle" text-anchor="middle" class="text-subtitle">AUTONOMOUS AGENT-DRIVEN DECENTRALIZED CONSENSUS</text>
+  
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+</svg>
