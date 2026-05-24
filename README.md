@@ -1,25 +1,15 @@
 <!-- Header Block -->
 <div align="center">
   <br />
-  <!-- Glowing Animated Blockchain Banner (Pure Vector CSS SVG) -->
-  <img src="assets/header.svg" width="100%" alt="banner">
-
-  <p>
-    <br />
-    <img src="https://img.shields.io/badge/Python-3.10+-8b5cf6?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10" />
-    <img src="https://img.shields.io/badge/Flask-3.0+-f59e0b?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
-    <img src="https://img.shields.io/badge/Crypto-SHA--256-8b5cf6?style=for-the-badge&logo=codestream&logoColor=white" alt="SHA-256" />
-    <img src="https://img.shields.io/badge/AI--Agents-Autonomous-f59e0b?style=for-the-badge&logo=openai&logoColor=white" alt="Autonomous Agents" />
-  </p>
+  <img src="assets/header-v2.svg" width="100%" alt="banner">
   
   <p>
-    An intelligent blockchain voting system powered by <b>autonomous background AI agents</b> for integrity auditing, pre-mine consensus validation, and automated self-healing recoveries.
+    <!-- Blockchain Live Ledger Board (Pure Vector CSS SVG) -->
   </p>
 </div>
 
 <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0.4), rgba(139, 92, 246, 0));" />
 
-<!-- Blockchain Live Ledger Board (Pure Vector CSS SVG) -->
 <div align="center">
   <h3>⛓️ Live Ledger Block Chain & Auditor Sweeper</h3>
   <br />
@@ -158,7 +148,7 @@ MIT License — Use freely for your college projects!
 ---
 
 <div align="center" style="margin-top: 40px;">
-  <img src="assets/footer.svg" width="100%" alt="footer">
+  <img src="assets/footer-v2.svg" width="100%" alt="footer">
 </div>
 <p style="font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; color: #8b5cf6; margin: 0; text-align: center;">
   built by ANUJ with ❤️ while pink floyd's 'Time' echoed in the background
