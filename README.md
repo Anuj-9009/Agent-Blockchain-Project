@@ -1,149 +1,83 @@
-<!-- Header Block -->
-<div align="center">
-  <br />
-  <img src="assets/header-v2.svg" width="100%" alt="banner">
-  
-  <p>
-    <!-- Blockchain Live Ledger Board (Pure Vector CSS SVG) -->
-  </p>
-</div>
+# Blockchain Voting System 🗳️⛓️
 
-<hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0.4), rgba(139, 92, 246, 0));" />
+<p>
+  <img src="https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Blockchain-Immutability-purple?style=for-the-badge&logo=ethereum&logoColor=white" alt="Blockchain" />
+  <img src="https://img.shields.io/badge/AI-Agentic%20Consensus-teal?style=for-the-badge" alt="AI Agents" />
+</p>
 
-<div align="center">
-  <h3>⛓️ Live Ledger Block Chain & Auditor Sweeper</h3>
-  <br />
-  <img src="assets/visualizer.svg" width="640" alt="visualizer">
-</div>
-
-<br />
+An autonomous, secure, and decentralized digital voting system powered by standard SHA-256 blockchain technology and AI-driven multi-agent consensus networks. The platform coordinates an **Auditor Agent** for continuous integrity checks and self-healing, alongside a **Consensus Agent** that validates voter identity, flags collusion anomalies, and records immutable blocks.
 
 ---
 
 ## 🧠 Why Is This Different From a Normal Database?
 
-| Feature | Normal Database | This System |
-|---|---|---|
-| **Data Integrity** | Trust the admin | Cryptographic proof (SHA-256 hash chain) |
-| **Tamper Detection** | Manual audits | 🔍 **Auditor Agent** — real-time, autonomous monitoring |
-| **Validation** | Static SQL constraints | 🤝 **Consensus Agent** — intelligent NLP-powered peer review |
-| **Recovery** | Restore from backup | 🩹 **Self-Healing** — automatic revert to last valid state |
-| **Transparency** | Query logs manually | 📊 **Live Dashboard** — agent activity visible in real-time |
+Standard database systems allow administrators to modify historic records or edit votes at the storage level. This blockchain architecture guarantees zero-trust security:
 
-### The "Agentic" Defense
-*"Why not just use MySQL?"*
-
-1. **Self-Healing**: If the Auditor Agent detects a hash mismatch, it automatically triggers a *"Revert to Last Known Good State"* protocol. No human intervention needed.
-2. **Intelligent Validation**: Unlike standard static constraints, the Consensus Agent can interpret *intent* and *context* using LLMs or advanced matching. It catches vote anomalies that rules miss.
-3. **Autonomous Operation**: The agents run as background daemon threads, continuously defending the ledger without human intervention.
+- **🔐 Cryptographic Chain Links:** Every block stores a SHA-256 hash of its voter payload and the previous block's hash. Editing any historical transaction immediately invalidates the cryptographic signatures of all subsequent blocks.
+- **🤖 The "Agentic" Defense:** Multi-agent monitors continuously evaluate the chain's structural health. If a malicious attacker bypasses system security to force an in-memory modification on a node, the **Auditor Agent** instantly detects the hash divergence, runs a majority consensus poll against other nodes, reconstructs the valid ledger from history, and restores the node's state autonomously.
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Multi-Agent System Architecture
 
-```mermaid
-graph TB
-    subgraph Dashboard["🖥️ Flask Dashboard"]
-        UI[Web UI] --> API[REST API]
-    end
-
-    subgraph Agents["🤖 Agent Layer"]
-        CA[🤝 Consensus Agent] -->|Pre-mine validation| BC
-        AA[🔍 Auditor Agent] -->|Background monitoring| BC
-        AA -->|Self-heal| BC
-    end
-
-    subgraph Core["⛓️ Blockchain Core"]
-        BC[Blockchain] --> B1[Block 0<br/>Genesis]
-        BC --> B2[Block 1]
-        BC --> B3[Block 2]
-        BC --> BN[Block N...]
-    end
-
-    subgraph LLM["🧠 LLM Layer (Optional)"]
-        OAI[OpenAI API]
-        ANT[Anthropic API]
-        LOCAL[Rule-Based Fallback]
-    end
-
-    API -->|POST /mine| CA
-    API -->|GET /chain| BC
-    CA -.->|Optional| OAI
-    CA -.->|Optional| ANT
-    CA -->|Always| LOCAL
-    AA -.->|Optional| OAI
-    AA -.->|Optional| ANT
-    AA -->|Always| LOCAL
 ```
+                       ┌────────────────────────────┐
+                       │     Vote Transaction       │
+                       └─────────────┬──────────────┘
+                                     │ (Raw Vote Request)
+                                     ▼
+                       ┌────────────────────────────┐
+                       │      Consensus Agent       │
+                       │   (Rules & LLM Anomaly)    │
+                       └─────────────┬──────────────┘
+                                     │ (Approved Block)
+                                     ▼
+                       ┌────────────────────────────┐
+                       │      Blockchain Core       │
+                       │   (SHA-256 Ledger State)   │
+                       └─────────────▲──────────────┘
+                                     │ (Continuous Polling & Health Audits)
+                                     │
+                       ┌─────────────┴──────────────┐
+                       │       Auditor Agent        │
+                       │  (Block Check & Healing)   │
+                       └────────────────────────────┘
+```
+
+1. **Consensus Agent:**
+   - Validates voter registration details and prevents duplicate submissions.
+   - Evaluates voting logs using a rule-based algorithm and custom AI modeling to flag colluding voter coordinates or systemic anomalies.
+2. **Auditor Agent:**
+   - Performs low-overhead hash loop verifications across the blockchain every `5 seconds`.
+   - Houses custom self-healing routines to pull validated database states from adjacent distributed consensus nodes when state errors are isolated.
 
 ---
 
-## 📂 Project Structure
-
-```
-/Agent-Blockchain-Project
-│
-├── /agents
-│   ├── __init__.py
-│   ├── auditor.py       # 🔍 Auditor Agent — background integrity monitor
-│   └── consensus.py     # 🤝 Consensus Agent — pre-mine transaction validator
-│
-├── /blockchain
-│   ├── __init__.py
-│   ├── block.py         # The Block class (SHA-256 + Proof of Work)
-│   └── chain.py         # Blockchain management (genesis, mining, validation)
-│
-├── app.py               # Flask web server, dashboard UI, all API routes
-├── requirements.txt     # Python dependencies
-└── README.md            # You're reading this!
-```
-
----
-
-## 🚀 Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
-* Python 3.10+
-* pip
+- **Python** 3.9+ installed on your host computer
+- `pip` package manager
 
-### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+### 💻 Installation & Local Test
 
-### 2. Run the System
-```bash
-python app.py
-```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Anuj-9009/Agent-Blockchain-Project.git
+   cd Agent-Blockchain-Project
+   ```
 
-You'll see:
-```
-=======================================================
-  ⛓️  Agent-Driven Blockchain Voting System
-  🤖 Auditor Agent: Starting...
-  🤝 Consensus Agent: Ready
-  🌐 Dashboard: http://localhost:5001
-=======================================================
-```
+2. **Install requirements:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### 3. Open the Dashboard
-Navigate to **http://localhost:5001** in your browser.
-
----
-
-## 🤖 How the Agents Work
-
-### 🔍 Auditor Agent
-The Auditor runs as a background thread, polling the blockchain every 5 seconds to walk the chain, recalculate hashes, and verify previous_hash links. If corruption is found, the agent automatically triggers the **self-healing revert protocol** to restore the chain to the last valid state.
-
-### 🤝 Consensus Agent
-Before a vote is mined, the Consensus Agent performs a simulated peer review: validation of voter fields, double-voting prevention, length limits, and NLP/LLM-powered reasoning (optional).
-
----
-
-## 📜 License
-
-MIT License — Use freely for your college projects!
+3. **Start the distributed voting node:**
+   ```bash
+   python main.py
+   ```
+   *Note: Open multiple terminal tabs and run the script on different ports (e.g. `python main.py --port 5001`, `python main.py --port 5002`) to verify the multi-node distributed blockchain peer-sync and self-healing features in real-time.*
 
 ---
 
