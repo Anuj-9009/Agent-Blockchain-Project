@@ -41,8 +41,7 @@
 | **Transparency** | Query logs manually | 📊 **Live Dashboard** — agent activity visible in real-time |
 
 ### The "Agentic" Defense
-
-When panels ask *"Why not just use MySQL?"* — here's your answer:
+*"Why not just use MySQL?"*
 
 1. **Self-Healing**: If the Auditor Agent detects a hash mismatch, it automatically triggers a *"Revert to Last Known Good State"* protocol. No human intervention needed.
 2. **Intelligent Validation**: Unlike standard static constraints, the Consensus Agent can interpret *intent* and *context* using LLMs or advanced matching. It catches vote anomalies that rules miss.
