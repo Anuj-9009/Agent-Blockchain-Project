@@ -8,7 +8,6 @@ This is the main entry point. It:
   4. Serves the Dashboard UI and API endpoints
 """
 
-import os
 import threading
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template_string
@@ -905,13 +904,6 @@ def health():
 
 
 # ═══════════════════════════════════════════════
-#  Start Background Agents
-# ═══════════════════════════════════════════════
-
-# Start the Auditor Agent background thread so it runs when deployed via Gunicorn
-auditor.start()
-
-# ═══════════════════════════════════════════════
 #  Entry Point
 # ═══════════════════════════════════════════════
 
@@ -920,10 +912,11 @@ if __name__ == "__main__":
     print("  ⛓️  Agent-Driven Blockchain Voting System")
     print("  🤖 Auditor Agent: Starting...")
     print("  🤝 Consensus Agent: Ready")
-    
-    port = int(os.environ.get("PORT", 5001))
-    print(f"  🌐 Dashboard: http://localhost:{port}")
+    print("  🌐 Dashboard: http://localhost:5001")
     print("=" * 55 + "\n")
 
+    # Start the Auditor Agent background thread
+    auditor.start()
+
     # Run Flask
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run(host="0.0.0.0", port=5001, debug=False)
