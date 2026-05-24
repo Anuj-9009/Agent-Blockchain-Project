@@ -2,7 +2,7 @@
 <div align="center">
   <br />
   <!-- Glowing Animated Blockchain Banner (Pure Vector CSS SVG) -->
-  <img src="assets/banner.svg" width="100%" alt="banner">
+  <img src="./assets/header.svg" width="100%" alt="banner">
 
   <p>
     <br />
@@ -158,8 +158,6 @@ MIT License — Use freely for your college projects!
 
 ---
 
-<div align="center" style="background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 80%); padding: 24px; border-radius: 16px;">
-  <p style="font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; color: #8b5cf6; margin: 0;">
-    built by ANUJ with ❤️ while pink floyd's "Time" echoed in the background
-  </p>
+<div align="center" style="margin-top: 40px;">
+  <img src="././assets/footer.svg" width="100%" alt="footer">
 </div>

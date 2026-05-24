@@ -1,0 +1,70 @@
+<svg width="600" height="110" viewBox="0 0 600 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .player-card {
+      fill: #0c0a12;
+      stroke: rgba(139, 92, 246, 0.25);
+      stroke-width: 1.5;
+      rx: 16px;
+    }
+    .node-link {
+      stroke: #8b5cf6;
+      stroke-width: 1.5;
+      stroke-dasharray: 4 4;
+      animation: dashMove 2s infinite linear;
+    }
+    .orbiting-node {
+      fill: #c084fc;
+      animation: orbitRotate 4s infinite linear;
+      transform-origin: 50px 55px;
+    }
+    .signature-text {
+      font-family: 'Sora', 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      fill: #8b5cf6;
+    }
+    .track-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      fill: #c084fc;
+    }
+    .marquee {
+      animation: slideMarquee 15s linear infinite;
+    }
+    .heart {
+      fill: #ef4444;
+      animation: heartbeat 1.2s infinite alternate ease-in-out;
+      transform-origin: 228px 78px;
+    }
+    @keyframes dashMove {
+      0% { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes orbitRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes slideMarquee {
+      0% { transform: translate(0px, 0); }
+      100% { transform: translate(-330px, 0); }
+    }
+    @keyframes heartbeat {
+      0% { transform: scale(0.9); }
+      100% { transform: scale(1.1); filter: drop-shadow(0 0 3px #ef4444); }
+    }
+  </style>
+  <rect x="1" y="1" width="598" height="108" class="player-card" />
+  <circle cx="50" cy="55" r="40" fill="#8b5cf6" opacity="0.08" filter="blur(20px)" />
+  <line x1="25" y1="55" x2="75" y2="55" class="node-link" />
+  <circle cx="25" cy="55" r="5" fill="#8b5cf6" filter="drop-shadow(0 0 3px #8b5cf6)" />
+  <circle cx="75" cy="55" r="5" fill="#8b5cf6" filter="drop-shadow(0 0 3px #8b5cf6)" />
+  <circle class="orbiting-node" cx="50" cy="35" r="3.5" />
+  <svg x="120" y="24" width="360" height="24" viewBox="0 0 360 24" style="overflow: hidden;">
+    <g class="marquee">
+      <text x="0" y="16" class="track-text">Now Playing: "Time" — Pink Floyd   •   Now Playing: "Time" — Pink Floyd</text>
+    </g>
+  </svg>
+  <text x="120" y="78" class="signature-text">built by ANUJ with</text>
+  <path class="heart" d="M248,74 C247,72 244,72 243,73 C242,74 242,76 244,78 L248,82 L252,78 C254,76 254,74 253,73 C252,72 249,72 248,74 Z" />
+  <text x="261" y="78" class="signature-text">while pink floyd's "Time" echoed in the background</text>
+</svg>
